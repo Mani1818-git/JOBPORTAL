@@ -248,9 +248,12 @@ Base URL: `http://localhost:5011`
 
 ---
 
-## 👤 Author
+## ## 👤 Author
 
-**Ankit Pathak** — [github.com/ankitpathak62](https://github.com/ankitpathak62)
+**Kamindla Manikanteshwar**
+
+- GitHub: [Mani1818-git](https://github.com/Mani1818-git)
+- Project Repository: [JOBPORTAL](https://github.com/Mani1818-git/JOBPORTAL)
 
 ---
 
