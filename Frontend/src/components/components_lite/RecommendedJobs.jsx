@@ -18,7 +18,7 @@ const RecommendedJobs = ({ jobId }) => {
       try {
         const res = await axios.get(
           `${JOB_API_ENDPOINT}/recommendations/${jobId}`,
-          { withCredentials: true }
+          { withCredentials: true },
         );
         if (res.data.status) {
           setJobs(res.data.jobs);
@@ -88,7 +88,9 @@ const RecommendedJobs = ({ jobId }) => {
               </Avatar>
               <div>
                 <h1 className="font-medium text-base">{job?.company?.name}</h1>
-                <p className="text-xs text-gray-500">{job?.location || "India"}</p>
+                <p className="text-xs text-gray-500">
+                  {job?.location || "India"}
+                </p>
               </div>
             </div>
 

@@ -7,7 +7,9 @@ const askAI = async (systemPrompt, userPrompt) => {
   const model = process.env.AI_MODEL;
 
   if (!baseUrl || !apiKey || !model) {
-    throw new Error("AI config missing in .env (AI_BASE_URL / AI_API_KEY / AI_MODEL)");
+    throw new Error(
+      "AI config missing in .env (AI_BASE_URL / AI_API_KEY / AI_MODEL)",
+    );
   }
 
   // don't let a slow AI call hang the request - give up after 8s

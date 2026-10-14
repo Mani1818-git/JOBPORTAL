@@ -40,7 +40,7 @@ const Register = () => {
       toast.error("You must accept the Terms and Conditions to register.");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("fullname", input.fullname);
     formData.append("email", input.email);
@@ -137,7 +137,9 @@ const Register = () => {
               />
             </div>
             <div>
-              <Label className="text-gray-700 font-semibold">Phone Number</Label>
+              <Label className="text-gray-700 font-semibold">
+                Phone Number
+              </Label>
               <Input
                 type="tel"
                 value={input.phoneNumber}
@@ -162,7 +164,9 @@ const Register = () => {
                     onChange={changeEventHandler}
                     className="cursor-pointer w-4 h-4 text-[#6B3AC2]"
                   />
-                  <Label htmlFor="r1" className="cursor-pointer">Student</Label>
+                  <Label htmlFor="r1" className="cursor-pointer">
+                    Student
+                  </Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Input
@@ -173,12 +177,16 @@ const Register = () => {
                     onChange={changeEventHandler}
                     className="cursor-pointer w-4 h-4 text-[#6B3AC2]"
                   />
-                  <Label htmlFor="r2" className="cursor-pointer">Recruiter</Label>
+                  <Label htmlFor="r2" className="cursor-pointer">
+                    Recruiter
+                  </Label>
                 </div>
               </RadioGroup>
             </div>
             <div className="w-full md:w-auto">
-              <Label className="text-gray-700 font-semibold block mb-2">Profile Photo</Label>
+              <Label className="text-gray-700 font-semibold block mb-2">
+                Profile Photo
+              </Label>
               <Input
                 type="file"
                 accept="image/*"
@@ -196,18 +204,29 @@ const Register = () => {
               onChange={handleTermsChange}
               className="mt-1 cursor-pointer w-4 h-4 text-[#6B3AC2] rounded border-gray-300 focus:ring-[#6B3AC2]"
             />
-            <Label htmlFor="terms" className="text-sm text-gray-700 leading-snug cursor-pointer font-normal">
+            <Label
+              htmlFor="terms"
+              className="text-sm text-gray-700 leading-snug cursor-pointer font-normal"
+            >
               I agree to the{" "}
-              <Link to="/terms" target="_blank" className="text-[#6B3AC2] font-semibold hover:underline">
+              <Link
+                to="/terms"
+                target="_blank"
+                className="text-[#6B3AC2] font-semibold hover:underline"
+              >
                 Terms and Conditions
               </Link>
-              , including data privacy and user conduct policies. I understand my acceptance timestamp will be securely recorded.
+              , including data privacy and user conduct policies. I understand
+              my acceptance timestamp will be securely recorded.
             </Label>
           </div>
 
           <div className="mt-8">
             {loading ? (
-              <button disabled className="w-full bg-[#6B3AC2] hover:bg-[#5b30a6] text-white py-3 rounded-lg flex justify-center items-center">
+              <button
+                disabled
+                className="w-full bg-[#6B3AC2] hover:bg-[#5b30a6] text-white py-3 rounded-lg flex justify-center items-center"
+              >
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               </button>
             ) : (
@@ -228,7 +247,10 @@ const Register = () => {
           <div className="mt-6 text-center">
             <p className="text-gray-600 text-sm">
               Already have an account?{" "}
-              <Link to="/login" className="text-[#FA4F09] hover:underline font-semibold">
+              <Link
+                to="/login"
+                className="text-[#FA4F09] hover:underline font-semibold"
+              >
                 Login here
               </Link>
             </p>

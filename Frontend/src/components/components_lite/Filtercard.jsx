@@ -80,7 +80,10 @@ const Filter = () => {
                     onChange={() => handleChange(item)}
                     className="w-4 h-4 text-[#6B3AC2] border-gray-300 rounded focus:ring-[#6B3AC2] cursor-pointer"
                   />
-                  <label htmlFor={itemId} className="cursor-pointer text-gray-700">
+                  <label
+                    htmlFor={itemId}
+                    className="cursor-pointer text-gray-700"
+                  >
                     {item}
                   </label>
                 </div>

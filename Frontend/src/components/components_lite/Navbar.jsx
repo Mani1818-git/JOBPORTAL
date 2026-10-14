@@ -19,9 +19,13 @@ const Navbar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.post(`${USER_API_ENDPOINT}/logout`, {
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        `${USER_API_ENDPOINT}/logout`,
+        {},
+        {
+          withCredentials: true,
+        },
+      );
       if (res && res.data && res.data.success) {
         dispatch(setUser(null));
         navigate("/");
@@ -51,7 +55,10 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <div className="md:hidden flex items-center">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 focus:outline-none">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-gray-700 hover:text-gray-900 focus:outline-none"
+          >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -62,28 +69,58 @@ const Navbar = () => {
             {user && user.role === "Recruiter" ? (
               <>
                 <li>
-                  <Link to={"/admin/companies"} className="hover:text-[#FA4F09] transition-colors">Companies</Link>
+                  <Link
+                    to={"/admin/companies"}
+                    className="hover:text-[#FA4F09] transition-colors"
+                  >
+                    Companies
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/admin/jobs"} className="hover:text-[#FA4F09] transition-colors">Jobs</Link>
+                  <Link
+                    to={"/admin/jobs"}
+                    className="hover:text-[#FA4F09] transition-colors"
+                  >
+                    Jobs
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link to={"/Home"} className="hover:text-[#FA4F09] transition-colors">Home</Link>
+                  <Link
+                    to={"/Home"}
+                    className="hover:text-[#FA4F09] transition-colors"
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/Browse"} className="hover:text-[#FA4F09] transition-colors">Browse</Link>
+                  <Link
+                    to={"/Browse"}
+                    className="hover:text-[#FA4F09] transition-colors"
+                  >
+                    Browse
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/Jobs"} className="hover:text-[#FA4F09] transition-colors">Jobs</Link>
+                  <Link
+                    to={"/Jobs"}
+                    className="hover:text-[#FA4F09] transition-colors"
+                  >
+                    Jobs
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/saved-jobs"} className="hover:text-[#FA4F09] transition-colors flex items-center gap-1">
+                  <Link
+                    to={"/saved-jobs"}
+                    className="hover:text-[#FA4F09] transition-colors flex items-center gap-1"
+                  >
                     Saved Jobs
                     {savedJobs && savedJobs.length > 0 && (
-                      <span className="bg-red-500 text-white text-xs rounded-full px-2 py-0.5">{savedJobs.length}</span>
+                      <span className="bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
+                        {savedJobs.length}
+                      </span>
                     )}
                   </Link>
                 </li>
@@ -142,7 +179,11 @@ const Navbar = () => {
 
                   <div className="flex w-fit items-center gap-2 cursor-pointer hover:bg-gray-50 px-2 rounded-md transition-colors">
                     <LogOut></LogOut>
-                    <Button onClick={logoutHandler} variant="link" className="p-0">
+                    <Button
+                      onClick={logoutHandler}
+                      variant="link"
+                      className="p-0"
+                    >
                       Logout
                     </Button>
                   </div>
@@ -160,65 +201,126 @@ const Navbar = () => {
             {user && user.role === "Recruiter" ? (
               <>
                 <li>
-                  <Link to={"/admin/companies"} onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-[#FA4F09]">Companies</Link>
+                  <Link
+                    to={"/admin/companies"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 hover:text-[#FA4F09]"
+                  >
+                    Companies
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/admin/jobs"} onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-[#FA4F09]">Jobs</Link>
+                  <Link
+                    to={"/admin/jobs"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 hover:text-[#FA4F09]"
+                  >
+                    Jobs
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link to={"/Home"} onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-[#FA4F09]">Home</Link>
+                  <Link
+                    to={"/Home"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 hover:text-[#FA4F09]"
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/Browse"} onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-[#FA4F09]">Browse</Link>
+                  <Link
+                    to={"/Browse"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 hover:text-[#FA4F09]"
+                  >
+                    Browse
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/Jobs"} onClick={() => setIsMenuOpen(false)} className="block py-2 hover:text-[#FA4F09]">Jobs</Link>
+                  <Link
+                    to={"/Jobs"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 hover:text-[#FA4F09]"
+                  >
+                    Jobs
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/saved-jobs"} onClick={() => setIsMenuOpen(false)} className="py-2 hover:text-[#FA4F09] flex items-center gap-2">
+                  <Link
+                    to={"/saved-jobs"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="py-2 hover:text-[#FA4F09] flex items-center gap-2"
+                  >
                     Saved Jobs
                     {savedJobs && savedJobs.length > 0 && (
-                      <span className="bg-red-500 text-white text-xs rounded-full px-2 py-0.5">{savedJobs.length}</span>
+                      <span className="bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
+                        {savedJobs.length}
+                      </span>
                     )}
                   </Link>
                 </li>
               </>
             )}
-            
+
             <li className="pt-4 border-t border-gray-100 flex flex-col gap-3">
               {!user ? (
                 <>
-                  <Link to={"/login"} onClick={() => setIsMenuOpen(false)} className="w-full">
-                    <Button variant="outline" className="w-full justify-center">Login</Button>
+                  <Link
+                    to={"/login"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full"
+                  >
+                    <Button variant="outline" className="w-full justify-center">
+                      Login
+                    </Button>
                   </Link>
-                  <Link to={"/register"} onClick={() => setIsMenuOpen(false)} className="w-full">
-                    <Button className="w-full justify-center bg-red-600 hover:bg-red-700">Register</Button>
+                  <Link
+                    to={"/register"}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full"
+                  >
+                    <Button className="w-full justify-center bg-red-600 hover:bg-red-700">
+                      Register
+                    </Button>
                   </Link>
                 </>
               ) : (
                 <div className="flex flex-col gap-4">
-                   <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-                     <Avatar className="cursor-pointer">
-                        <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
-                     </Avatar>
-                     <div>
-                       <h3 className="font-medium text-sm">{user?.fullname}</h3>
-                     </div>
-                   </div>
-                   
-                   {user && user.role === "Student" && (
-                    <Link to={"/Profile"} onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 text-gray-600 py-2">
+                  <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
+                    <Avatar className="cursor-pointer">
+                      <AvatarImage
+                        src={user?.profile?.profilePhoto}
+                        alt="@shadcn"
+                      />
+                    </Avatar>
+                    <div>
+                      <h3 className="font-medium text-sm">{user?.fullname}</h3>
+                    </div>
+                  </div>
+
+                  {user && user.role === "Student" && (
+                    <Link
+                      to={"/Profile"}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-2 text-gray-600 py-2"
+                    >
                       <User2 size={20} />
                       <span>Profile</span>
                     </Link>
-                   )}
-                   <button onClick={() => { logoutHandler(); setIsMenuOpen(false); }} className="flex items-center gap-2 text-red-600 py-2 font-medium text-left">
-                     <LogOut size={20} />
-                     <span>Logout</span>
-                   </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      logoutHandler();
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center gap-2 text-red-600 py-2 font-medium text-left"
+                  >
+                    <LogOut size={20} />
+                    <span>Logout</span>
+                  </button>
                 </div>
               )}
             </li>

@@ -43,7 +43,7 @@ const PostJob = () => {
 
   const selectChangeHandler = (value) => {
     const selectedCompany = companies.find(
-      (company) => company.name.toLowerCase() === value
+      (company) => company.name.toLowerCase() === value,
     );
     setInput({ ...input, companyId: selectedCompany._id });
   };
@@ -71,7 +71,6 @@ const PostJob = () => {
       } else {
         toast.error("An unexpected error occurred");
       }
-      
     } finally {
       setLoading(false);
     }
@@ -201,7 +200,8 @@ const PostJob = () => {
             {loading ? (
               <Button className="w-full px-4 py-2 text-sm text-white bg-black rounded-md ">
                 {" "}
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait{" "}
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
+                wait{" "}
               </Button>
             ) : (
               <Button

@@ -28,7 +28,10 @@ const AdminJobs = () => {
             placeholder="Filter by Name & Jobs"
             onChange={(e) => setInput(e.target.value)}
           ></Input>
-          <Button className="w-full sm:w-auto" onClick={() => navigate("/admin/jobs/create")}>
+          <Button
+            className="w-full sm:w-auto"
+            onClick={() => navigate("/admin/jobs/create")}
+          >
             Post new Job
           </Button>
         </div>
